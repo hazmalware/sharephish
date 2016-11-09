@@ -1,7 +1,7 @@
 # sharephish.py
 
 Allows you to share phishing emails from CRITs with a Soltra instance.
-Queries the CRITs mongodb for emails with an assigned releasability that you specify and packages them in STIX and sends to Soltra over TAXII. Before using you must create a source in your CRITs and set the variable in the python code, or if you have a pre-existing source you want to use, make sure to change the variable THESOURCE on line 41 of sharephish.py to match your designation. To mark an email for release you simply click the add releasability '+' on the email details page and select your designated source from the list.
+Queries the CRITs mongodb for emails with an assigned releasability that you specify and packages them in STIX and sends to Soltra over TAXII. Before using you must create a source in your CRITs and set the variable in the python code, or if you have a pre-existing source you want to use, make sure to change the variable THESOURCE on line 36 of sharephish.py to match your designation. To mark an email for release you simply click the add releasability '+' on the email details page and select your designated source from the list.
 
 This script will query the mongodb for any emails that have been released after 12:00:00 AM local server time to that source.
 Parses out email headers, raw body, first attachment, and creates a STIX object packages it wit Cybox/TAXII and sends it to the specified Soltra instance.
