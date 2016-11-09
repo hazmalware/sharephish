@@ -8,7 +8,7 @@ Parses out email headers, raw body, first attachment, and creates a STIX object 
 
 NOTE: it does not check to see if the email has been sent previously. if the email has been sent before the script will get a taxii messsage stating the object already exists and will filter it out.
 
-Sets the TLP to Green by default. You can change this by seeting the tlp.color on line 106
+Sets the TLP to Green by default. You can change this by seeting the tlp.color on line 98
 
 You can add 'Analyst Notes' to the stix package description by adding a comment on the email details page and/or attachment details page in CRITs by making the first line of the comment 'ANALYST NOTE'
 
@@ -35,11 +35,11 @@ CRITs Control Panel -> Items -> Sources from the crits menu<br>
 Create a source and set Active=on<br>
 
 Changes that need to be made in the code:
-* LINE 41 - Set the variable THESOURCE to the source you created in CRITs OR if you have an existing source you want to use.. make the appropriate changes here
-* LINE 68 - Set the variable 'externaltag' to match any tagging you use in the subject line of emails to remove it
-* LINE 76 - uncomment this line and add any text you would like to remove from the subject line or body of the email. you can specify multiple terms to remove like so - \bTERM1\b|\bTERM2\b|\bTERM3\b - this will only work for the 'keywords-to-remove' area
-* LINE 106 - change the TLP color to suite your needs. it is set to GREEN by default.
-* LINE 138 - this will remove internal email addresses that are spoofed as the From, Sender, and Replyto addresses and replace it with the term [SPOOFED]. You can comment and uncomment this section as you see fit. You have to change the 'term1', 'term2' to match your company domains without the .com/.net/etc extensions.
+* LINE 36 - Set the variable THESOURCE to the source you created in CRITs OR if you have an existing source you want to use.. make the appropriate changes here
+* LINE 63 - Set the variable 'externaltag' to match any tagging you use in the subject line of emails to remove it
+* LINE 68 - uncomment this line and add any text you would like to remove from the subject line or body of the email. you can specify multiple terms to remove like so - \bTERM1\b|\bTERM2\b|\bTERM3\b - this will only work for the 'keywords-to-remove' area
+* LINE 98 - change the TLP color to suite your needs. it is set to GREEN by default.
+* LINE 130 - this will remove internal email addresses that are spoofed as the From, Sender, and Replyto addresses and replace it with the term [SPOOFED]. You can comment and uncomment this section as you see fit. You have to change the 'term1', 'term2' to match your company domains without the .com/.net/etc extensions.
 
 
 requires a configs.ini file created in the same directory as sharephish.py with the following settings<br>
